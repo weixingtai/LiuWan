@@ -1,0 +1,27 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="style_page">
+        <item name="android:textSize">@dimen/size_title</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_width">176dp</item>
+        <item name="android:layout_height">50dp</item>
+    </style>
+
+    <style name="style_button">
+        <item name="android:textSize">@dimen/size_title</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_width">176dp</item>
+        <item name="android:layout_height">50dp</item>
+    </style>
+
+    <style name="style_list_item">
+        <item name="android:textSize">@dimen/size_title</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_width">176dp</item>
+        <item name="android:layout_height">50dp</item>
+    </style>
+
+</resources>

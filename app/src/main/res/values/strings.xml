@@ -4,4 +4,5 @@
     <string name="title_discovery">Discovery</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_user">User</string>
+    <string name="login">Login</string>
 </resources>
