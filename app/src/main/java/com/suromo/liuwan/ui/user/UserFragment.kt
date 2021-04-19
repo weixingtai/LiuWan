@@ -8,37 +8,30 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.suromo.liuwan.R
 import com.suromo.liuwan.databinding.FragmentUserBinding
+import kotlinx.android.synthetic.main.fragment_user.*
 
 class UserFragment : Fragment() {
 
     private lateinit var userViewModel: UserViewModel
-    private var _binding: FragmentUserBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        return inflater.inflate(R.layout.fragment_user, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         userViewModel =
             ViewModelProvider(this).get(UserViewModel::class.java)
 
-        _binding = FragmentUserBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-        val textView: TextView = binding.textUser
         userViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
+            tvUser.text = it
         })
-        return root
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding = null
     }
 }
