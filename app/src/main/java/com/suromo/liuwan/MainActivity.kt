@@ -39,6 +39,7 @@ class MainActivity : AppCompatActivity() {
                 main_bnv.visibility = View.GONE
             }
         }
+
     }
 
     override fun onBackPressed() {
