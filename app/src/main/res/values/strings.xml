@@ -6,4 +6,9 @@
     <string name="user">User</string>
     <string name="login">Login</string>
     <string name="register">Register</string>
+    <string name="account">Account</string>
+    <string name="password">Password</string>
+    <string name="register_account">Register Account</string>
+    <string name="forget_password">Forget Password?</string>
+    <string name="third_party_logins">Third-party Logins</string>
 </resources>
