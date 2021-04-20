@@ -7,30 +7,36 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import kotlinx.android.synthetic.main.activity_main.*
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.suromo.liuwan.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
-        val navController = findNavController(R.id.nav_host_fragment_activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        val main_bnv: BottomNavigationView = binding.mainBnv
+        val navController = findNavController(R.id.main_nhf)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigationHome, R.id.navigationDiscovery, R.id.navigationNotifications, R.id.navigationUser
+                R.id.nav_home, R.id.nav_discovery, R.id.nav_notifications, R.id.nav_user
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
-        bnvNavigation.setupWithNavController(navController)
+        main_bnv.setupWithNavController(navController)
         navController.addOnDestinationChangedListener { _, destination, _ ->
-            if (destination.id == R.id.navigationHome || destination.id == R.id.navigationDiscovery
-                ||destination.id == R.id.navigationNotifications ||destination.id == R.id.navigationUser){
-                bnvNavigation.visibility = View.VISIBLE
+            if (destination.id == R.id.nav_home || destination.id == R.id.nav_discovery
+                ||destination.id == R.id.nav_notifications ||destination.id == R.id.nav_user){
+                main_bnv.visibility = View.VISIBLE
             }else{
-                bnvNavigation.visibility = View.GONE
+                main_bnv.visibility = View.GONE
             }
         }
     }

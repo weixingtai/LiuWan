@@ -1,8 +1,9 @@
 <resources>
     <string name="app_name">遛弯</string>
-    <string name="title_home">找车</string>
-    <string name="title_discovery">发现</string>
-    <string name="title_notifications">消息</string>
-    <string name="title_user">我的</string>
+    <string name="find_car">找车</string>
+    <string name="discovery">发现</string>
+    <string name="notifications">消息</string>
+    <string name="user">我的</string>
     <string name="login">登录</string>
+    <string name="register">注册</string>
 </resources>

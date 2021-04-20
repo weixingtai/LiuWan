@@ -32,7 +32,7 @@ class DiscoveryFragment : Fragment() {
         _binding = FragmentDiscoveryBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textDiscovery
+        val textView: TextView = binding.discoveryTv
         discoveryViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
