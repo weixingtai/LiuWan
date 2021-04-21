@@ -7,7 +7,9 @@ import com.suromo.liuwan.data.home.BannerBean
 import com.youth.banner.adapter.BannerAdapter
 
 
-class HomeBannerAdapter(beanList: List<BannerBean?>?) : BannerAdapter<BannerBean?, HomeBannerAdapter.BannerViewHolder?>(beanList) {
+class HomeBannerAdapter(beanList: ArrayList<BannerBean>) : BannerAdapter<BannerBean, HomeBannerAdapter.BannerViewHolder>(
+    beanList as List<BannerBean>
+) {
     override fun onCreateHolder(parent: ViewGroup, viewType: Int): BannerViewHolder {
         val imageView = ImageView(parent.context)
         imageView.layoutParams = ViewGroup.LayoutParams(
@@ -19,12 +21,12 @@ class HomeBannerAdapter(beanList: List<BannerBean?>?) : BannerAdapter<BannerBean
     }
 
     override fun onBindView(
-        holder: HomeBannerAdapter.BannerViewHolder?,
-        bean: BannerBean?,
+        holder: HomeBannerAdapter.BannerViewHolder,
+        bean: BannerBean,
         position: Int,
         size: Int
     ) {
-        bean?.imgRes?.let { holder?.imageView?.setImageResource(it) }
+        bean.imgRes.let { holder.imageView.setImageResource(it) }
     }
 
     inner class BannerViewHolder(var imageView: ImageView) : RecyclerView.ViewHolder(
