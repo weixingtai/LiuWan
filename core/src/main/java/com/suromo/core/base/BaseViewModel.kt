@@ -9,15 +9,10 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 /**
-
-\* author : weixingtai
-
-\* e-mail : xingtai.wei@icloud.com
-
-\* time  : 2021/4/22
-
-\* desc  : ViewModel基类
-
+ * author : weixingtai
+ * e-mail : xingtai.wei@icloud.com
+ * time  : 2021/4/22
+ * desc  : ViewModel基类
  */
 open class BaseViewModel : ViewModel() {
 

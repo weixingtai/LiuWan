@@ -10,15 +10,10 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 
 /**
-
-\* author : weixingtai
-
-\* e-mail : xingtai.wei@icloud.com
-
-\* time  : 2021/4/22
-
-\* desc  : ViewModelFragment基类
-
+ * author : weixingtai
+ * e-mail : xingtai.wei@icloud.com
+ * time  : 2021/4/22
+ * desc  : ViewModelFragment基类
  */
 abstract class BaseVMFragment<T: ViewDataBinding>(@LayoutRes val layoutId: Int) : Fragment(layoutId) {
 

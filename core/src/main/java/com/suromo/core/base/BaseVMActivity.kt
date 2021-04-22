@@ -6,16 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 
-/**
-
-\* author : weixingtai
-
-\* e-mail : xingtai.wei@icloud.com
-
-\* time  : 2021/4/22
-
-\* desc  : ViewModelActivity基类
-
+ /**
+ * author : weixingtai
+ * e-mail : xingtai.wei@icloud.com
+ * time  : 2021/4/22
+ * desc  : ViewModelActivity基类
  */
 abstract class BaseVMActivity : AppCompatActivity() {
 

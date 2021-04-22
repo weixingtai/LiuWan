@@ -6,15 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 
 /**
-
-\* author : weixingtai
-
-\* e-mail : xingtai.wei@icloud.com
-
-\* time  : 2021/4/22
-
-\* desc  : Fragment基类
-
+ * author : weixingtai
+ * e-mail : xingtai.wei@icloud.com
+ * time  : 2021/4/22
+ * desc  : Fragment基类
  */
 abstract class BaseFragment : androidx.fragment.app.Fragment() {
 
