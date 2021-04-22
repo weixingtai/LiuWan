@@ -1,24 +1,14 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 android {
-
     compileSdkVersion cfgs.compileSdkVersion
     buildToolsVersion cfgs.buildToolsVersion
 
-    signingConfigs {
-        signing {
-            storeFile file(sign.file)
-            storePassword sign.storePassword
-            keyAlias sign.keyAlias
-            keyPassword sign.keyPassword
-        }
-    }
-
     defaultConfig {
-        applicationId "com.suromo.liuwan"
         minSdkVersion cfgs.minSdkVersion
         targetSdkVersion cfgs.targetSdkVersion
         versionCode cfgs.versionCode
@@ -26,28 +16,23 @@ android {
 
         testInstrumentationRunner cfgs.testInstrumentationRunner
         consumerProguardFiles cfgs.consumerProguardFiles
-        signingConfig signingConfigs.signing
     }
 
     buildTypes {
         release {
             minifyEnabled true // 混淆
-            shrinkResources true // 去除无用资源 与lint不同
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
+    buildFeatures {
+        dataBinding = true
+    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
     kotlinOptions {
         jvmTarget = '1.8'
-    }
-
-    buildFeatures {
-        viewBinding true
     }
 }
 
@@ -62,8 +47,6 @@ dependencies {
     implementation des.navigation
     implementation des.navigationUI
     implementation des.stdlib
-    implementation des.banner
-    implementation des.glide
 
     implementation project(path: ':core')
 

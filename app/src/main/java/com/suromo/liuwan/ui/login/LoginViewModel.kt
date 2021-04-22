@@ -10,4 +10,16 @@ class LoginViewModel : ViewModel() {
         value = "This is Login Fragment"
     }
     val text: LiveData<String> = _text
+
+
+    fun login(account: String,password:String){
+
+    }
+
+
+
+
+
+
+
 }

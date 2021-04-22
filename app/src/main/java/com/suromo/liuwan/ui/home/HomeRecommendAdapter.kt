@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.suromo.liuwan.R
 import com.suromo.liuwan.data.home.RecommendBean
 
-class HomeRecommendAdapter(var list: ArrayList<RecommendBean>): RecyclerView.Adapter<HomeRecommendAdapter.RecommendViewHolder>() {
+class HomeRecommendAdapter(var list: MutableList<RecommendBean>): RecyclerView.Adapter<HomeRecommendAdapter.RecommendViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecommendViewHolder {
         return RecommendViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.adapter_home_recommend_item,parent,false))
