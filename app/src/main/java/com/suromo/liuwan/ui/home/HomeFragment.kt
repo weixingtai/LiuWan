@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.RecyclerView.VERTICAL
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.suromo.liuwan.R
-import com.suromo.liuwan.data.home.BannerBean
-import com.suromo.liuwan.data.home.RecommendBean
+import com.suromo.liuwan.data.model.BannerBean
+import com.suromo.liuwan.data.model.RecommendBean
 import com.suromo.liuwan.databinding.FragmentHomeBinding
 import com.youth.banner.indicator.CircleIndicator
 

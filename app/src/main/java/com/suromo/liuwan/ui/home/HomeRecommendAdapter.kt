@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.suromo.liuwan.R
-import com.suromo.liuwan.data.home.RecommendBean
+import com.suromo.liuwan.data.model.RecommendBean
 
 /**
  * author : weixingtai

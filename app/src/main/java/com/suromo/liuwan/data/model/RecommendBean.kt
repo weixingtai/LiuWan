@@ -1,4 +1,4 @@
-package com.suromo.liuwan.data.home
+package com.suromo.liuwan.data.model
 
 /**
  * author : weixingtai

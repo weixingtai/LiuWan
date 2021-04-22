@@ -3,7 +3,7 @@ package com.suromo.liuwan.ui.home
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
-import com.suromo.liuwan.data.home.BannerBean
+import com.suromo.liuwan.data.model.BannerBean
 import com.youth.banner.adapter.BannerAdapter
 
 /**

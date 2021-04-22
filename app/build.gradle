@@ -71,6 +71,9 @@ dependencies {
     implementation des.swiperefresh
     implementation des.viewPager2
     implementation des.coroutines
+    implementation des.koin
+    implementation des.koinScope
+    implementation des.koinViewModel
 
     implementation project(path: ':core')
 

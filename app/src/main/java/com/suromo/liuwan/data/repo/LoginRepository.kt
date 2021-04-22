@@ -1,4 +1,4 @@
-package com.suromo.liuwan.data.login
+package com.suromo.liuwan.data.repo
 
 /**
  * author : weixingtai

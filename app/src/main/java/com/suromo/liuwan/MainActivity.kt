@@ -9,6 +9,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.suromo.liuwan.databinding.ActivityMainBinding
+
 /**
  * author : weixingtai
  * e-mail : xingtai.wei@icloud.com
