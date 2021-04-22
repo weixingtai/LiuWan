@@ -64,6 +64,13 @@ dependencies {
     implementation des.stdlib
     implementation des.banner
     implementation des.glide
+    implementation des.retrofit
+    implementation des.retrofitGson
+    implementation des.okhttp3
+    implementation des.franmontiel
+    implementation des.swiperefresh
+    implementation des.viewPager2
+    implementation des.coroutines
 
     implementation project(path: ':core')
 
