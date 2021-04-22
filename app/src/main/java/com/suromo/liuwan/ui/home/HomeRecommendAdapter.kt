@@ -9,6 +9,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.suromo.liuwan.R
 import com.suromo.liuwan.data.home.RecommendBean
 
+/**
+ * author : weixingtai
+ * e-mail : xingtai.wei@icloud.com
+ * time  : 2021/4/22
+ * desc  : TODO
+ */
 class HomeRecommendAdapter(var list: MutableList<RecommendBean>): RecyclerView.Adapter<HomeRecommendAdapter.RecommendViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecommendViewHolder {

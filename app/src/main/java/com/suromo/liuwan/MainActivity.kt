@@ -9,7 +9,12 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.suromo.liuwan.databinding.ActivityMainBinding
-
+/**
+ * author : weixingtai
+ * e-mail : xingtai.wei@icloud.com
+ * time  : 2021/4/22
+ * desc  : TODO
+ */
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding

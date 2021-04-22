@@ -14,7 +14,12 @@ import com.suromo.liuwan.data.home.RecommendBean
 import com.suromo.liuwan.databinding.FragmentHomeBinding
 import com.youth.banner.indicator.CircleIndicator
 
-
+/**
+ * author : weixingtai
+ * e-mail : xingtai.wei@icloud.com
+ * time  : 2021/4/22
+ * desc  : TODO
+ */
 class HomeFragment : Fragment() {
 
     private lateinit var homeViewModel: HomeViewModel

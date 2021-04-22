@@ -10,6 +10,12 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.suromo.liuwan.databinding.FragmentNotificationsBinding
 
+/**
+ * author : weixingtai
+ * e-mail : xingtai.wei@icloud.com
+ * time  : 2021/4/22
+ * desc  : TODO
+ */
 class NotificationsFragment : Fragment() {
 
     private lateinit var notificationsViewModel: NotificationsViewModel

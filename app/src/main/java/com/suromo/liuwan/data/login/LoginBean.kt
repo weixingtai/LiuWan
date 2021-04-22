@@ -1,7 +1,10 @@
 package com.suromo.liuwan.data.login
 
 /**
- * 登录成功返回结构体，服务器提供
+ * author : weixingtai
+ * e-mail : xingtai.wei@icloud.com
+ * time  : 2021/4/22
+ * desc  : TODO
  */
 data class LoginBean(
     val userId: String,

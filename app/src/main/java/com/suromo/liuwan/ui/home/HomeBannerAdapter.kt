@@ -6,7 +6,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.suromo.liuwan.data.home.BannerBean
 import com.youth.banner.adapter.BannerAdapter
 
-
+/**
+ * author : weixingtai
+ * e-mail : xingtai.wei@icloud.com
+ * time  : 2021/4/22
+ * desc  : TODO
+ */
 class HomeBannerAdapter(var bannerList: MutableList<BannerBean>) : BannerAdapter<BannerBean, HomeBannerAdapter.BannerViewHolder>(bannerList) {
 
     override fun onCreateHolder(parent: ViewGroup, viewType: Int): BannerViewHolder {
