@@ -16,7 +16,7 @@ import kotlinx.coroutines.withContext
  */
 open class BaseViewModel : ViewModel() {
 
-    open class UiState<T>(
+    open class UIState<T>(
         val isLoading: Boolean = false,
         val isRefresh: Boolean = false,
         val isSuccess: T? = null,
@@ -24,7 +24,7 @@ open class BaseViewModel : ViewModel() {
     )
 
 
-    open class BaseUiModel<T>(
+    open class BaseUIModel<T>(
         var showLoading: Boolean = false,
         var showError: String? = null,
         var showSuccess: T? = null,

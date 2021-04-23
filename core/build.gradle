@@ -48,8 +48,6 @@ dependencies {
     implementation des.navigationUI
     implementation des.stdlib
 
-    implementation project(path: ':core')
-
     testImplementation des.junit
     androidTestImplementation des.extJunit
     androidTestImplementation des.espressoCore

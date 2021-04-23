@@ -9,8 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.suromo.liuwan.databinding.FragmentDiscoveryBinding
-import com.suromo.liuwan.databinding.FragmentUserBinding
-import com.suromo.liuwan.ui.user.UserViewModel
 
 /**
  * author : weixingtai
@@ -31,7 +29,7 @@ class DiscoveryFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         discoveryViewModel =
             ViewModelProvider(this).get(DiscoveryViewModel::class.java)
 

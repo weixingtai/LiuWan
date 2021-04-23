@@ -1,52 +1,56 @@
 package com.suromo.liuwan.ui.login
 
-import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.MenuItem
-import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.suromo.core.base.BaseVMFragment
 import com.suromo.liuwan.R
 import com.suromo.liuwan.databinding.FragmentLoginBinding
-import com.suromo.liuwan.databinding.FragmentNotificationsBinding
-import com.suromo.liuwan.ui.notifications.NotificationsViewModel
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 /**
  * author : weixingtai
  * e-mail : xingtai.wei@icloud.com
  * time  : 2021/4/22
- * desc  : TODO
+ * desc  : 登录界面
  */
-class LoginFragment : Fragment() {
+class LoginFragment : BaseVMFragment<FragmentLoginBinding>(R.layout.fragment_login) {
 
-    private lateinit var loginViewModel: LoginViewModel
-    private var _binding: FragmentLoginBinding? = null
+    private val loginViewModel by viewModel<LoginViewModel>()
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+    override fun initView() {
         setHasOptionsMenu(true)
-        loginViewModel =
-            ViewModelProvider(this).get(LoginViewModel::class.java)
+        binding.run {
 
-        _binding = FragmentLoginBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+//            title =  Title(R.string.login, R.drawable.arrow_back) { onBackPressed() }
+        }
+    }
 
-//        val textView: TextView = binding.login
-        loginViewModel.text.observe(viewLifecycleOwner, Observer {
-//            textView.text = it
-        })
-        return root
+    override fun initData() {
+
+    }
+
+    @ExperimentalCoroutinesApi
+    override fun startObserve() {
+        loginViewModel.apply {
+
+            uiState.observe(this@LoginFragment, Observer {
+//                if (it.isLoading) showProgressDialog()
+
+                it.isSuccess?.let {
+//                    dismissProgressDialog()
+//                    finish()
+                }
+
+                it.isError?.let { err ->
+//                    dismissProgressDialog()
+//                    toast(err)
+                }
+
+                if (it.needLogin) loginViewModel.login()
+            })
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -56,8 +60,4 @@ class LoginFragment : Fragment() {
         return super.onOptionsItemSelected(item)
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
 }
