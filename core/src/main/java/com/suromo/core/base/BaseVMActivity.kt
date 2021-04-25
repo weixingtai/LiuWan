@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 
- /**
+/**
  * author : weixingtai
  * e-mail : xingtai.wei@icloud.com
  * time  : 2021/4/22
@@ -14,11 +14,12 @@ import androidx.databinding.ViewDataBinding
  */
 abstract class BaseVMActivity : AppCompatActivity() {
 
-    protected inline fun <reified T : ViewDataBinding> binding(
-        @LayoutRes resId: Int
-    ): Lazy<T> = lazy { DataBindingUtil.setContentView<T>(this, resId).apply {
-        lifecycleOwner = this@BaseVMActivity
-    } }
+    protected inline fun <reified T : ViewDataBinding> binding(@LayoutRes resId: Int): Lazy<T> =
+        lazy {
+            DataBindingUtil.setContentView<T>(this, resId).apply {
+                lifecycleOwner = this@BaseVMActivity
+            }
+        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -76,6 +76,8 @@ dependencies {
     implementation des.koin
     implementation des.koinScope
     implementation des.koinViewModel
+    implementation des.hawk
+    implementation des.logger
 
     implementation project(path: ':core')
 

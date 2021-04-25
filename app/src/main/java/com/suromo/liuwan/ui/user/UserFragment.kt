@@ -1,50 +1,32 @@
 package com.suromo.liuwan.ui.user
 
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import com.suromo.liuwan.databinding.FragmentDiscoveryBinding
+import com.suromo.core.base.BaseVMFragment
+import com.suromo.liuwan.R
+import com.suromo.liuwan.databinding.FragmentUserBinding
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 /**
  * author : weixingtai
  * e-mail : xingtai.wei@icloud.com
  * time  : 2021/4/22
- * desc  : TODO
+ * desc  : 用户模块界面
  */
-class UserFragment : Fragment() {
+class UserFragment : BaseVMFragment<FragmentUserBinding>(R.layout.fragment_user) {
 
-    private lateinit var userViewModel: UserViewModel
-    private var _binding: FragmentDiscoveryBinding? = null
+    private val userViewModel by viewModel<UserViewModel>()
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
+    override fun initView() {
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        userViewModel =
-            ViewModelProvider(this).get(UserViewModel::class.java)
-
-        _binding = FragmentDiscoveryBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-        val textView: TextView = binding.discoveryTv
-        userViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
-        return root
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    override fun initData() {
+
+    }
+
+    override fun startObserve() {
+        userViewModel.text.observe(viewLifecycleOwner, Observer {
+            binding.userTv.text = it
+        })
     }
 }

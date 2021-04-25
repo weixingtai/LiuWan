@@ -2,9 +2,12 @@ package com.suromo.liuwan
 
 import android.app.Application
 import android.content.Context
+import com.orhanobut.hawk.Hawk
+import com.orhanobut.logger.AndroidLogAdapter
+import com.orhanobut.logger.Logger
+import com.suromo.liuwan.data.model.User
 import com.suromo.liuwan.di.appModule
 import luyao.mvvm.core.util.Timer
-import com.suromo.liuwan.data.model.User
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 import kotlin.properties.Delegates
@@ -28,11 +31,18 @@ class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
+
         CONTEXT = applicationContext
 
         startKoin {
             androidContext(this@App)
             modules(appModule)
         }
+
+        Hawk.init(CONTEXT).build()
+
+        Logger.addLogAdapter(AndroidLogAdapter())
+
+
     }
 }

@@ -5,6 +5,7 @@ import com.suromo.liuwan.data.network.RetrofitClient
 import com.suromo.liuwan.data.repo.LoginRepository
 import com.suromo.liuwan.provider.CoroutinesDispatcherProvider
 import com.suromo.liuwan.ui.login.LoginViewModel
+import com.suromo.liuwan.ui.user.UserViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
@@ -21,7 +22,7 @@ val viewModelModule = module {
 //    viewModel { NavigationViewModel(get()) }
 //    viewModel { ProjectViewModel(get()) }
 //    viewModel { SearchViewModel(get(), get()) }
-//    viewModel { ShareViewModel(get()) }
+    viewModel { UserViewModel() }
 }
 
 val repositoryModule = module {

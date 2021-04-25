@@ -33,9 +33,10 @@ class MainActivity : BaseVMActivity() {
         mainBnv.setupWithNavController(navController)
         navController.addOnDestinationChangedListener { _, destination, _ ->
             if (destination.id == R.id.nav_home || destination.id == R.id.nav_discovery
-                ||destination.id == R.id.nav_notifications ||destination.id == R.id.nav_user){
+                || destination.id == R.id.nav_notifications || destination.id == R.id.nav_user
+            ) {
                 mainBnv.visibility = View.VISIBLE
-            }else{
+            } else {
                 mainBnv.visibility = View.GONE
             }
         }
