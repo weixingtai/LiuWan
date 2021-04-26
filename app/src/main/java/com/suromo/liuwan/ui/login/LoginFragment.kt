@@ -33,24 +33,24 @@ class LoginFragment : BaseVMFragment<FragmentLoginBinding>(R.layout.fragment_log
 
     @ExperimentalCoroutinesApi
     override fun startObserve() {
-        loginViewModel.apply {
-
-            uiState.observe(this@LoginFragment, Observer {
-//                if (it.isLoading) showProgressDialog()
-
-                it.isSuccess?.let {
-//                    dismissProgressDialog()
-//                    finish()
-                }
-
-                it.isError?.let { err ->
-//                    dismissProgressDialog()
-//                    toast(err)
-                }
-
-                if (it.needLogin) loginViewModel.login()
-            })
-        }
+//        loginViewModel.apply {
+//
+//            uiState.observe(this@LoginFragment, Observer {
+////                if (it.isLoading) showProgressDialog()
+//
+//                it.isSuccess?.let {
+////                    dismissProgressDialog()
+////                    finish()
+//                }
+//
+//                it.isError?.let { err ->
+////                    dismissProgressDialog()
+////                    toast(err)
+//                }
+//
+//                if (it.needLogin) loginViewModel.login()
+//            })
+//        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

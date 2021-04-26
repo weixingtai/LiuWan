@@ -20,7 +20,6 @@ class MainActivity : BaseVMActivity() {
     private val binding by binding<ActivityMainBinding>(R.layout.activity_main)
 
     override fun initView() {
-
         val mainBnv: BottomNavigationView = binding.mainBnv
         val navController = findNavController(R.id.main_nhf)
 
@@ -38,6 +37,11 @@ class MainActivity : BaseVMActivity() {
                 mainBnv.visibility = View.VISIBLE
             } else {
                 mainBnv.visibility = View.GONE
+            }
+            if (destination.id == R.id.nav_discovery){
+                supportActionBar?.hide()
+            }else {
+                supportActionBar?.show()
             }
         }
     }
