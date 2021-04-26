@@ -3,7 +3,7 @@ package com.suromo.liuwan.ui.home
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
-import com.suromo.liuwan.data.model.BannerBean
+import com.suromo.liuwan.data.model.Banner
 import com.youth.banner.adapter.BannerAdapter
 
 /**
@@ -12,7 +12,7 @@ import com.youth.banner.adapter.BannerAdapter
  * time  : 2021/4/22
  * desc  : TODO
  */
-class HomeBannerAdapter(var bannerList: MutableList<BannerBean>) : BannerAdapter<BannerBean, HomeBannerAdapter.BannerViewHolder>(bannerList) {
+class HomeBannerAdapter(var bannerList: MutableList<Banner>) : BannerAdapter<Banner, HomeBannerAdapter.BannerViewHolder>(bannerList) {
 
     override fun onCreateHolder(parent: ViewGroup, viewType: Int): BannerViewHolder {
         val imageView = ImageView(parent.context)
@@ -21,7 +21,7 @@ class HomeBannerAdapter(var bannerList: MutableList<BannerBean>) : BannerAdapter
         return BannerViewHolder(imageView)
     }
 
-    override fun onBindView(holder: BannerViewHolder, bean: BannerBean, position: Int, size: Int) {
+    override fun onBindView(holder: BannerViewHolder, bean: Banner, position: Int, size: Int) {
         bean.imgRes.let { holder.imageView.setImageResource(it) }
     }
 

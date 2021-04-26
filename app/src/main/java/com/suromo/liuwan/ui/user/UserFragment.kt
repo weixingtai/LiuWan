@@ -10,7 +10,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
  * author : weixingtai
  * e-mail : xingtai.wei@icloud.com
  * time  : 2021/4/22
- * desc  : 用户模块界面
+ * desc  : 用户界面
  */
 class UserFragment : BaseVMFragment<FragmentUserBinding>(R.layout.fragment_user) {
 

@@ -1,15 +1,10 @@
 package com.suromo.core.data
 
 /**
-
-\* author : weixingtai
-
-\* e-mail : xingtai.wei@icloud.com
-
-\* time  : 2021/4/22
-
-\* desc  : TODO
-
+author : weixingtai
+e-mail : xingtai.wei@icloud.com
+time  : 2021/4/22
+desc  : 调用结果封装类
  */
 sealed class Result<out T : Any> {
 

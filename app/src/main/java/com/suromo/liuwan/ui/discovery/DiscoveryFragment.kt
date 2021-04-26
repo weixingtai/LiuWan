@@ -1,14 +1,10 @@
 package com.suromo.liuwan.ui.discovery
 
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
+import com.suromo.core.base.BaseVMFragment
+import com.suromo.liuwan.R
 import com.suromo.liuwan.databinding.FragmentDiscoveryBinding
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 /**
  * author : weixingtai
@@ -16,35 +12,25 @@ import com.suromo.liuwan.databinding.FragmentDiscoveryBinding
  * time  : 2021/4/22
  * desc  : TODO
  */
-class DiscoveryFragment : Fragment() {
+class DiscoveryFragment : BaseVMFragment<FragmentDiscoveryBinding>(R.layout.fragment_discovery) {
 
-    private lateinit var discoveryViewModel: DiscoveryViewModel
-    private var _binding: FragmentDiscoveryBinding? = null
+    private val discoveryViewModel by viewModel<DiscoveryViewModel>()
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        discoveryViewModel =
-            ViewModelProvider(this).get(DiscoveryViewModel::class.java)
 
-        _binding = FragmentDiscoveryBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+    override fun initView() {
 
-        val textView: TextView = binding.discoveryTv
+    }
+
+    override fun initData() {
+
+    }
+
+    override fun startObserve() {
         discoveryViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
+            binding.discoveryTv.text = it
         })
-        return root
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
+
 }

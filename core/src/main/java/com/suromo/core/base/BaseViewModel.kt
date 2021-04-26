@@ -20,7 +20,7 @@ open class BaseViewModel : ViewModel() {
         val isLoading: Boolean = false,
         val isRefresh: Boolean = false,
         val isSuccess: T? = null,
-        val isError: String?= null
+        val isError: String? = null
     )
 
 

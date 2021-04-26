@@ -4,7 +4,9 @@ import com.suromo.liuwan.data.network.ApiService
 import com.suromo.liuwan.data.network.RetrofitClient
 import com.suromo.liuwan.data.repo.LoginRepository
 import com.suromo.liuwan.provider.CoroutinesDispatcherProvider
+import com.suromo.liuwan.ui.discovery.DiscoveryViewModel
 import com.suromo.liuwan.ui.login.LoginViewModel
+import com.suromo.liuwan.ui.notifications.NotificationsViewModel
 import com.suromo.liuwan.ui.user.UserViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -20,8 +22,8 @@ val viewModelModule = module {
 //    viewModel { ArticleViewModel(get(), get(), get(), get(), get()) }
 //    viewModel { SystemViewModel(get(), get()) }
 //    viewModel { NavigationViewModel(get()) }
-//    viewModel { ProjectViewModel(get()) }
-//    viewModel { SearchViewModel(get(), get()) }
+    viewModel { DiscoveryViewModel() }
+    viewModel { NotificationsViewModel() }
     viewModel { UserViewModel() }
 }
 

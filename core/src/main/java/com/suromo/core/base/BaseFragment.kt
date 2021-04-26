@@ -15,20 +15,25 @@ import androidx.fragment.app.Fragment
  * time  : 2021/4/22
  * desc  : Fragment基类
  */
-abstract class BaseFragment<T: ViewDataBinding>(@LayoutRes val layoutId: Int) : Fragment(layoutId) {
+abstract class BaseFragment<T : ViewDataBinding>(@LayoutRes val layoutId: Int) :
+    Fragment(layoutId) {
 
-    lateinit var binding:T
+    lateinit var binding: T
 
-    protected  fun < T : ViewDataBinding> binding(
+    protected fun <T : ViewDataBinding> binding(
         inflater: LayoutInflater,
         @LayoutRes layoutId: Int,
         container: ViewGroup?
-    ): T =   DataBindingUtil.inflate<T>(inflater,layoutId, container,false).apply {
+    ): T = DataBindingUtil.inflate<T>(inflater, layoutId, container, false).apply {
         lifecycleOwner = this@BaseFragment
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = binding(inflater,layoutId,container)
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = binding(inflater, layoutId, container)
         return binding.root
     }
 

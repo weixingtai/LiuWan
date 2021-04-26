@@ -9,7 +9,7 @@ import retrofit2.http.*
  * author : weixingtai
  * e-mail : xingtai.wei@icloud.com
  * time  : 2021/4/22
- * desc  : TODO
+ * desc  : 网络请求接口
  */
 interface ApiService {
 
@@ -19,7 +19,8 @@ interface ApiService {
 
     @GET("/article/list/{page}/json")
     suspend fun getHomeArticles(@Path("page") page: Int): Response<ArticleList>
-//
+
+    //
 //    @GET("/banner/json")
 //    suspend fun getBanner(): WanResponse<List<Banner>>
 //
@@ -59,14 +60,22 @@ interface ApiService {
 //
     @FormUrlEncoded
     @POST("/user/login")
-    suspend fun login(@Field("username") userName: String, @Field("password") passWord: String): Response<User>
-//
+    suspend fun login(
+        @Field("username") userName: String,
+        @Field("password") passWord: String
+    ): Response<User>
+
+    //
 //    @GET("/user/logout/json")
 //    suspend fun logOut(): WanResponse<Any>
 //
     @FormUrlEncoded
     @POST("/user/register")
-    suspend fun register(@Field("username") userName: String, @Field("password") passWord: String, @Field("repassword") rePassWord: String): Response<User>
+    suspend fun register(
+        @Field("username") userName: String,
+        @Field("password") passWord: String,
+        @Field("repassword") rePassWord: String
+    ): Response<User>
 //
 //    @GET("/lg/collect/list/{page}/json")
 //    suspend fun getCollectArticles(@Path("page") page: Int): WanResponse<ArticleList>

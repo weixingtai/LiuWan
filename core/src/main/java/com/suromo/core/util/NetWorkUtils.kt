@@ -7,14 +7,15 @@ import android.net.ConnectivityManager
  * author : weixingtai
  * e-mail : xingtai.wei@icloud.com
  * time  : 2021/4/22
- * desc  : TODO
+ * desc  : 网络工具类
  */
 class NetWorkUtils {
 
     companion object {
         fun isNetworkAvailable(context: Context): Boolean {
             val manager = context.applicationContext.getSystemService(
-                    Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+                Context.CONNECTIVITY_SERVICE
+            ) as ConnectivityManager
             val info = manager.activeNetworkInfo
             return !(null == info || !info.isAvailable)
         }

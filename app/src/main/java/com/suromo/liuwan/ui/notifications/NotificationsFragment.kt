@@ -8,43 +8,34 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.suromo.core.base.BaseVMFragment
+import com.suromo.liuwan.R
 import com.suromo.liuwan.databinding.FragmentNotificationsBinding
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 /**
  * author : weixingtai
  * e-mail : xingtai.wei@icloud.com
  * time  : 2021/4/22
- * desc  : TODO
+ * desc  : 通知界面
  */
-class NotificationsFragment : Fragment() {
+class NotificationsFragment : BaseVMFragment<FragmentNotificationsBinding>(R.layout.fragment_notifications) {
 
-    private lateinit var notificationsViewModel: NotificationsViewModel
-    private var _binding: FragmentNotificationsBinding? = null
+    private val notificationsViewModel by viewModel<NotificationsViewModel>()
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
+    override fun initView() {
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        notificationsViewModel =
-            ViewModelProvider(this).get(NotificationsViewModel::class.java)
+    }
 
-        _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+    override fun initData() {
 
-        val textView: TextView = binding.notificationsTv
+    }
+
+    override fun startObserve() {
         notificationsViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
+            binding.notificationsTv.text = it
         })
-        return root
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
+
 }

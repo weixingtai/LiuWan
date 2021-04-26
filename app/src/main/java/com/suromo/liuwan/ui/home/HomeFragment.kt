@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.RecyclerView.VERTICAL
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.suromo.liuwan.R
-import com.suromo.liuwan.data.model.BannerBean
-import com.suromo.liuwan.data.model.RecommendBean
+import com.suromo.liuwan.data.model.Banner
+import com.suromo.liuwan.data.model.Recommend
 import com.suromo.liuwan.databinding.FragmentHomeBinding
 import com.youth.banner.indicator.CircleIndicator
 
@@ -18,7 +18,7 @@ import com.youth.banner.indicator.CircleIndicator
  * author : weixingtai
  * e-mail : xingtai.wei@icloud.com
  * time  : 2021/4/22
- * desc  : TODO
+ * desc  : 找车界面（首页）
  */
 class HomeFragment : Fragment() {
 
@@ -35,19 +35,19 @@ class HomeFragment : Fragment() {
 
         homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
 
-        val bean1 = BannerBean(R.drawable.ic_banner_demo1,"标题")
-        val bean2 = BannerBean(R.drawable.ic_banner_demo2,"qq")
-        val beanList: MutableList<BannerBean> = ArrayList()
-        beanList.add(bean1)
-        beanList.add(bean2)
+        val bean1 = Banner(R.drawable.ic_banner_demo1,"标题")
+        val bean2 = Banner(R.drawable.ic_banner_demo2,"qq")
+        val list: MutableList<Banner> = ArrayList()
+        list.add(bean1)
+        list.add(bean2)
         binding.homeBanner.addBannerLifecycleObserver(this)
-            .setAdapter(HomeBannerAdapter(beanList)).indicator = CircleIndicator(context)
+            .setAdapter(HomeBannerAdapter(list)).indicator = CircleIndicator(context)
 
-        val bean3 = RecommendBean(R.drawable.ic_banner_demo1,R.drawable.ic_qq,"菲亚特500","丰田纪念版非常牛逼非常牛逼丰田纪念版非常牛逼非常牛逼丰田纪念版非常牛逼非常牛逼丰田纪念版非常牛逼非常牛逼",5.3)
-        val bean4 = RecommendBean(R.drawable.ic_banner_demo2,R.drawable.ic_qq,"奔驰ML400","丰田纪念版非常牛逼非常牛逼丰田纪念版非常牛逼非常牛逼丰田纪念版非常牛逼非",10.4)
-        val bean5 = RecommendBean(R.drawable.ic_banner_demo2,R.drawable.ic_qq,"奔驰ML500","丰田纪念版非常牛逼非常牛逼丰田纪念版非常牛逼非纪念版非常牛逼非",60.4)
-        val bean6 = RecommendBean(R.drawable.ic_banner_demo1,R.drawable.ic_qq,"奔驰ML700","丰田纪念版非常牛逼非常牛逼丰田纪念版非常牛逼非常牛逼丰田牛逼非",70.4)
-        val recommendList: MutableList<RecommendBean> = ArrayList()
+        val bean3 = Recommend(R.drawable.ic_banner_demo1,R.drawable.ic_qq,"菲亚特500","丰田纪念版非常牛逼非常牛逼丰田纪念版非常牛逼非常牛逼丰田纪念版非常牛逼非常牛逼丰田纪念版非常牛逼非常牛逼",5.3)
+        val bean4 = Recommend(R.drawable.ic_banner_demo2,R.drawable.ic_qq,"奔驰ML400","丰田纪念版非常牛逼非常牛逼丰田纪念版非常牛逼非常牛逼丰田纪念版非常牛逼非",10.4)
+        val bean5 = Recommend(R.drawable.ic_banner_demo2,R.drawable.ic_qq,"奔驰ML500","丰田纪念版非常牛逼非常牛逼丰田纪念版非常牛逼非纪念版非常牛逼非",60.4)
+        val bean6 = Recommend(R.drawable.ic_banner_demo1,R.drawable.ic_qq,"奔驰ML700","丰田纪念版非常牛逼非常牛逼丰田纪念版非常牛逼非常牛逼丰田牛逼非",70.4)
+        val recommendList: MutableList<Recommend> = ArrayList()
         recommendList.add(bean3)
         recommendList.add(bean4)
         recommendList.add(bean5)

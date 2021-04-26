@@ -2,7 +2,7 @@ package com.suromo.liuwan.ui.notifications
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import com.suromo.core.base.BaseViewModel
 
 /**
  * author : weixingtai
@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModel
  * time  : 2021/4/22
  * desc  : TODO
  */
-class NotificationsViewModel : ViewModel() {
+class NotificationsViewModel : BaseViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
         value = "This is notifications Fragment"
