@@ -2,19 +2,19 @@ package com.suromo.liuwan.ui.discovery
 
 import com.suromo.core.base.BaseVMFragment
 import com.suromo.liuwan.R
-import com.suromo.liuwan.databinding.FragmentTabHostBinding
+import com.suromo.liuwan.databinding.FragmentMineBinding
 
 /**
  * author : weixingtai
  * e-mail : xingtai.wei@icloud.com
- * time  : 2021/4/26
+ * time  : 2021/4/30
  * desc  : TODO
  */
-class TabHostFragment : BaseVMFragment<FragmentTabHostBinding>(R.layout.fragment_tab_host) {
+class MineFragment : BaseVMFragment<FragmentMineBinding>(R.layout.fragment_mine)  {
 
     companion object {
-        fun newInstance(): TabHostFragment {
-            return TabHostFragment()
+        fun newInstance(): MineFragment {
+            return MineFragment()
         }
     }
 
@@ -29,4 +29,5 @@ class TabHostFragment : BaseVMFragment<FragmentTabHostBinding>(R.layout.fragment
     override fun startObserve() {
 
     }
+
 }

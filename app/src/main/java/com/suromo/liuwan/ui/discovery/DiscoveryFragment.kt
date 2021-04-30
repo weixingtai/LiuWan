@@ -22,7 +22,8 @@ class DiscoveryFragment : BaseVMFragment<FragmentDiscoveryBinding>(R.layout.frag
 
     private val discoveryViewModel by viewModel<DiscoveryViewModel>()
 
-    private val mTypeList = mutableListOf<String>("遛弯","关注","我的")
+    private val mTypeList = mutableListOf("遛弯","关注","我的")
+    private var mFragmentList: MutableList<Fragment> = mutableListOf()
 
 
     override fun initView() {
@@ -36,14 +37,12 @@ class DiscoveryFragment : BaseVMFragment<FragmentDiscoveryBinding>(R.layout.frag
         binding.discoverySv.setOnSearchClickListener {
             TransitionManager.beginDelayedTransition(binding.discoverySv, mSet)
         }
-//        binding.discoverySv.setOnCloseListener {
-//            TransitionManager.beginDelayedTransition(binding.discoverySv, mSet)
-//            return@setOnCloseListener false
-//        }
     }
 
     override fun initData() {
-
+        mFragmentList.add(WalkFragment.newInstance())
+        mFragmentList.add(FollowFragment.newInstance())
+        mFragmentList.add(MineFragment.newInstance())
     }
 
     override fun startObserve() {
@@ -56,7 +55,7 @@ class DiscoveryFragment : BaseVMFragment<FragmentDiscoveryBinding>(R.layout.frag
             override fun getItemCount() = mTypeList.size
 
             override fun createFragment(position: Int): Fragment {
-                return TabHostFragment.newInstance()
+                return mFragmentList[position]
             }
         }
 
