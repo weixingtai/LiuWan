@@ -1,9 +1,10 @@
 package com.suromo.liuwan.data.network
 
-import com.suromo.liuwan.data.model.ArticleList
 import com.suromo.liuwan.data.model.Response
 import com.suromo.liuwan.data.model.User
-import retrofit2.http.*
+import retrofit2.http.Field
+import retrofit2.http.FormUrlEncoded
+import retrofit2.http.POST
 
 /**
  * author : weixingtai
@@ -17,8 +18,8 @@ interface ApiService {
         const val BASE_URL = "https://www.wanandroid.com"
     }
 
-    @GET("/article/list/{page}/json")
-    suspend fun getHomeArticles(@Path("page") page: Int): Response<ArticleList>
+//    @GET("/article/list/{page}/json")
+//    suspend fun getHomeArticles(@Path("page") page: Int): Response<ArticleList>
 
     //
 //    @GET("/banner/json")

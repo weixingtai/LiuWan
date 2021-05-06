@@ -41,7 +41,8 @@ ext {
             koinScope    : "org.koin:koin-androidx-scope:2.0.1",
             koinViewModel: "org.koin:koin-androidx-viewmodel:2.0.1",
             hawk         : "com.orhanobut:hawk:2.0.1",
-            logger         : 'com.orhanobut:logger:2.2.0',
+            logger       : 'com.orhanobut:logger:2.2.0',
+            roundedImage : 'com.makeramen:roundedimageview:2.3.0',
 
             //test
             junit        : "junit:junit:4.13.1",

@@ -1,9 +1,8 @@
-package com.suromo.liuwan.ui.discovery
+package com.suromo.liuwan.ui.discovery.mine
 
 import com.suromo.core.base.BaseVMFragment
 import com.suromo.liuwan.R
-import com.suromo.liuwan.databinding.FragmentFollowBinding
-import com.suromo.liuwan.databinding.FragmentTabHostBinding
+import com.suromo.liuwan.databinding.FragmentMineBinding
 
 /**
  * author : weixingtai
@@ -11,11 +10,11 @@ import com.suromo.liuwan.databinding.FragmentTabHostBinding
  * time  : 2021/4/30
  * desc  : TODO
  */
-class FollowFragment : BaseVMFragment<FragmentFollowBinding>(R.layout.fragment_follow)  {
+class MineFragment : BaseVMFragment<FragmentMineBinding>(R.layout.fragment_mine)  {
 
     companion object {
-        fun newInstance(): FollowFragment {
-            return FollowFragment()
+        fun newInstance(): MineFragment {
+            return MineFragment()
         }
     }
 

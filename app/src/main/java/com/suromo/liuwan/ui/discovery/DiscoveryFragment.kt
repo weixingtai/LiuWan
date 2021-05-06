@@ -10,6 +10,9 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.suromo.core.base.BaseVMFragment
 import com.suromo.liuwan.R
 import com.suromo.liuwan.databinding.FragmentDiscoveryBinding
+import com.suromo.liuwan.ui.discovery.follow.FollowFragment
+import com.suromo.liuwan.ui.discovery.mine.MineFragment
+import com.suromo.liuwan.ui.discovery.walk.WalkFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 /**
@@ -28,6 +31,7 @@ class DiscoveryFragment : BaseVMFragment<FragmentDiscoveryBinding>(R.layout.frag
 
     override fun initView() {
         setHasOptionsMenu(true)
+
         initViewPager()
 
         val mSet = AutoTransition()

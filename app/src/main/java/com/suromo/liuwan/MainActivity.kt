@@ -35,12 +35,9 @@ class MainActivity : BaseVMActivity() {
                 || destination.id == R.id.nav_notifications || destination.id == R.id.nav_user
             ) {
                 mainBnv.visibility = View.VISIBLE
+                supportActionBar?.hide()
             } else {
                 mainBnv.visibility = View.GONE
-            }
-            if (destination.id == R.id.nav_discovery){
-                supportActionBar?.hide()
-            }else {
                 supportActionBar?.show()
             }
         }

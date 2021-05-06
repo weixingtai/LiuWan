@@ -8,12 +8,12 @@ import java.io.Serializable
  * time  : 2021/4/22
  * desc  : 文章列表实体类
  */
-data class ArticleList(
-    val offset: Int,
-    val size: Int,
-    val total: Int,
-    val pageCount: Int,
-    val curPage: Int,
-    val over: Boolean,
-    val datas: List<Article>
-) : Serializable
+//data class ArticleList(
+//    val offset: Int,
+//    val size: Int,
+//    val total: Int,
+//    val pageCount: Int,
+//    val curPage: Int,
+//    val over: Boolean,
+//    val datas: List<Article>
+//) : Serializable
