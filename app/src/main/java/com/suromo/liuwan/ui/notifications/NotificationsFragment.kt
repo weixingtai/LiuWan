@@ -1,13 +1,6 @@
 package com.suromo.liuwan.ui.notifications
 
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import com.suromo.core.base.BaseVMFragment
 import com.suromo.liuwan.R
 import com.suromo.liuwan.databinding.FragmentNotificationsBinding
@@ -33,7 +26,7 @@ class NotificationsFragment : BaseVMFragment<FragmentNotificationsBinding>(R.lay
 
     override fun startObserve() {
         notificationsViewModel.text.observe(viewLifecycleOwner, Observer {
-            binding.notificationsTv.text = it
+//            binding.notificationsTv.text = it
         })
     }
 
